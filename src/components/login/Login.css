@@ -1,0 +1,36 @@
+html {
+  background-color: #403D58
+}
+
+.Login {
+
+  border-radius:  .3em;
+  background-color: #F2EFEA;
+  width: 60vw;
+  height: 50vh;
+  margin: auto;
+  margin-top: 3em;
+  padding: .4em;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 2px 0px 0px #FC7753; 
+  box-shadow: 0px 2px 0px 0px #FC7753;
+  input {
+    margin: .6em;
+    margin-top: 2em;
+  }
+  button {
+    border-radius: .2em;
+    margin: 0 auto;
+    width: 15%;
+    background-color: #403D58;
+    color: #FC7753;
+    border: .1em solid #66D7D1;
+  }
+}
+
+$light-grey: #F2EFEA;
+$coral: #FC7753;
+$turq: #66D7D1;
+$navy: #403D58;
+
