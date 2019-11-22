@@ -1,12 +1,24 @@
 import React from 'react';
-import Login from './login/Login';
+import { BrowserRouter as Router,
+  Route 
+} from 'react-router-dom';
+import LoginContainer from '../containers/LoginContainer';
+import FeedContainer from '../containers/FeedContainer';
 import resetCss from '../reset.css';
 
 const App = () => {
   return (
-    <div className={resetCss}>
-      <Login />
-    </div>
+    <Router>
+      <div className={resetCss}>
+        <Route exact path='/'>
+          <LoginContainer />
+        </Route>
+        <Route path='/user/:userId'>
+          <FeedContainer />
+        </Route>
+      </div>
+
+    </Router>
   );
 };
 

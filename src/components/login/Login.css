@@ -19,14 +19,16 @@ html {
     margin: .6em;
     margin-top: 2em;
   }
-  button {
-    border-radius: .2em;
-    margin: 0 auto;
-    width: 15%;
-    background-color: #403D58;
-    color: #FC7753;
-    border: .1em solid #66D7D1;
-  }
+}
+.button {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  border-radius: .2em;
+  width: 15%;
+  background-color: #403D58;
+  color: #FC7753;
+  border: .1em solid #66D7D1;
 }
 
 $light-grey: #F2EFEA;
