@@ -13,7 +13,7 @@ const App = () => {
         <Route exact path='/'>
           <LoginContainer />
         </Route>
-        <Route path='/user/:userId'>
+        <Route path='/user/:userName'>
           <FeedContainer />
         </Route>
       </div>

@@ -1,26 +1,22 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import FeedList from '../components/FeedList';
 import Editor from '../components/editor/Editor';
-import { getUser, getMessages } from '../selectors/userSelectors';
+import { getMessages } from '../selectors/userSelectors';
 import { makeMessage } from '../actions/userActions';
 
-const FeedContainer = ({ match }) => {
+const FeedContainer = () => {
   const dispatch = useDispatch();
-  const name = useSelector(state => getUser(state));
   const messages = useSelector(state => getMessages(state));
+  let { userName } = useParams();
 
-  const getUserFrom = (match) => {
-    console.log(match.params);
-  };
-
-  getUserFrom(match);
-  const handleSubmit = message => {
-    dispatch(makeMessage(message));
+  const handleSubmit = (message, name) => {
+    dispatch(makeMessage(message, name));
   };
   return (
     <>
-      <Editor name={name} handleSubmit={handleSubmit} />
+      <Editor name={userName} handleSubmit={handleSubmit} />
       <FeedList messages={messages}/>
     </>
   );

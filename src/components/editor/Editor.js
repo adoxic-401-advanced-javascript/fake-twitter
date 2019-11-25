@@ -7,7 +7,7 @@ const Editor = ({ name, handleSubmit }) => {
 
   const handleFormSubmit = event => {
     event.preventDefault();
-    handleSubmit(message);
+    handleSubmit(message, name);
   };
   return (
     <div className={styles.Editor}>
