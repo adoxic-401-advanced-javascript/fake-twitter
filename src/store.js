@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from './reducers';
 
 const storageMiddleware = store => next => action => {
@@ -7,9 +7,13 @@ const storageMiddleware = store => next => action => {
   localStorage.setItem('history', JSON.stringify(storePostAction.user.messages));
 };
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 export default createStore(
   reducer,
-  applyMiddleware(
-    storageMiddleware,
-  ),
+  composeEnhancers(
+    applyMiddleware(
+      storageMiddleware,
+    ),
+  )
 );

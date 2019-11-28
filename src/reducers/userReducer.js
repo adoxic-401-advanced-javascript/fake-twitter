@@ -1,12 +1,17 @@
 import { MAKE_MESSAGE } from '../actions/userActions';
+import { getMessages } from '../services/message';
 
-const isHistoryInLocal = () => {
-  if(localStorage.getItem('history')) return JSON.parse(localStorage.getItem('history'));
-  return [];
+const getHistoryFromDB = () => {
+  return getMessages()
+    .then((body) => { 
+      console.log(body);
+      if(body !== {}) return JSON.parse(body);
+      return [];
+    }); 
 };
 
 const initialState = {
-  messages: isHistoryInLocal()
+  messages: getHistoryFromDB()
 };
 
 export default function reducer(state = initialState, action) {
